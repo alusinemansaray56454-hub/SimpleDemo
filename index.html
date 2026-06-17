@@ -338,35 +338,82 @@
       letter-spacing: 0.3px;
     }
 
-    /* Sub-options */
+    /* Sub-options - 3 cards when Registration is clicked */
     .sub-options {
       display: none;
-      flex-direction: column;
-      gap: 6px;
-      margin-top: 10px;
-      padding-top: 10px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 12px;
+      padding-top: 12px;
       border-top: 1px dashed #fcd34d;
     }
 
     .sub-options.open {
-      display: flex;
+      display: grid;
     }
 
-    .sub-option {
-      background: rgba(255,255,255,0.6);
-      border: 1px solid #fcd34d;
-      border-radius: 12px;
-      padding: 8px 6px;
-      font-size: 0.65rem;
-      font-weight: 600;
-      color: #92400e;
+    .sub-option-card {
+      border-radius: 14px;
+      padding: 14px 8px;
+      font-size: 0.7rem;
+      font-weight: 700;
       cursor: pointer;
       transition: 0.15s;
+      text-align: center;
+      min-height: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      line-height: 1.3;
+      border: 1px solid rgba(255,255,255,0.3);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
 
-    .sub-option:active {
+    .sub-option-card:active {
       transform: scale(0.95);
-      background: #fef3c7;
+    }
+
+    /* Manual Entry - Blue */
+    .sub-option-card.manual {
+      background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 100%);
+      border-color: #93c5fd;
+      color: #1e40af;
+    }
+    .sub-option-card.manual:active {
+      background: #bfdbfe;
+    }
+
+    /* Records - Green */
+    .sub-option-card.records {
+      background: linear-gradient(135deg, #d1fae5 0%, #ecfdf5 100%);
+      border-color: #6ee7b7;
+      color: #065f46;
+    }
+    .sub-option-card.records:active {
+      background: #a7f3d0;
+    }
+
+    /* Targeted - Purple */
+    .sub-option-card.targeted {
+      background: linear-gradient(135deg, #ede9fe 0%, #f5f3ff 100%);
+      border-color: #a78bfa;
+      color: #5b21b6;
+    }
+    .sub-option-card.targeted:active {
+      background: #ddd6fe;
+    }
+
+    .sub-option-card .sub-label {
+      font-size: 0.55rem;
+      font-weight: 500;
+      opacity: 0.8;
+      margin-top: 2px;
+    }
+
+    /* Registration card special - make it full width when expanded */
+    .action-card.registration.expanded {
+      grid-column: 1 / -1;
     }
 
     /* Logout Bar */
@@ -785,9 +832,9 @@
   ];
 
   const subOptions = [
-    { id: 1, title: "Manual Entry", desc: "Manually enter patient or health worker data" },
-    { id: 2, title: "Records", desc: "View and manage existing records" },
-    { id: 3, title: "Targeted", desc: "Targeted registration for specific groups" }
+    { id: 1, title: "Manual Entry", subClass: "manual" },
+    { id: 2, title: "Records", subClass: "records" },
+    { id: 3, title: "Targeted", subClass: "targeted" }
   ];
 
   // DOM elements
@@ -832,7 +879,7 @@
         if (line === '') continue;
         const parts = line.split(',');
         if (parts.length >= 2) {
-          users.push({
+   1`Q       users.push({
             username: parts[0].trim(),
             password: parts[1].trim()
           });
@@ -944,7 +991,9 @@
         subsHTML = `
           <div class="sub-options" id="subs-${card.id}">
             ${subOptions.map(sub => `
-              <div class="sub-option" data-sub-id="${sub.id}" data-sub-title="${sub.title}" data-sub-desc="${sub.desc}">${sub.title}</div>
+              <div class="sub-option-card ${sub.subClass}" data-sub-id="${sub.id}" data-sub-title="${sub.title}">
+                ${sub.title}
+              </div>
             `).join('')}
           </div>
         `;
@@ -962,28 +1011,28 @@
       const hasSubs = cardEl.dataset.hasSubs === 'true';
       
       cardEl.addEventListener('click', (e) => {
-        if (e.target.classList.contains('sub-option')) return;
+        if (e.target.classList.contains('sub-option-card')) return;
         
         if (hasSubs) {
           const subs = document.getElementById(`subs-${cardId}`);
           if (subs) {
             subs.classList.toggle('open');
+            cardEl.classList.toggle('expanded');
           }
         }
       });
     });
 
-    document.querySelectorAll('.sub-option').forEach(subEl => {
+    document.querySelectorAll('.sub-option-card').forEach(subEl => {
       subEl.addEventListener('click', (e) => {
         e.stopPropagation();
         const subId = parseInt(subEl.dataset.subId);
         const title = subEl.dataset.subTitle;
-        const desc = subEl.dataset.subDesc;
         
         if (subId === 1) {
           openFormModal();
         } else {
-          openSubModal(title, desc);
+          openSubModal(title, `${title} module - tap to access detailed features.`);
         }
       });
     });
