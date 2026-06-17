@@ -61,10 +61,10 @@
       border-radius: 10px;
     }
 
-    /* header - green gradient with logo above title */
+    /* header - green gradient */
     .app-header {
       background: linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%);
-      padding: 20px 20px 16px;
+      padding: 14px 16px 10px;
       position: relative;
     }
 
@@ -76,8 +76,8 @@
     }
 
     .logo-container {
-      width: 56px;
-      height: 56px;
+      width: 46px;
+      height: 46px;
       background: white;
       border-radius: 50%;
       display: flex;
@@ -85,7 +85,7 @@
       justify-content: center;
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
       overflow: hidden;
-      margin-bottom: 10px;
+      margin-bottom: 6px;
     }
 
     .logo-image {
@@ -95,13 +95,13 @@
     }
 
     .logo-fallback {
-      font-size: 24px;
+      font-size: 20px;
       font-weight: 600;
       color: #059669;
     }
 
     .title-container h1 {
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       font-weight: 700;
       color: white;
       letter-spacing: 0.3px;
@@ -109,31 +109,84 @@
     }
 
     .title-container p {
-      font-size: 0.6rem;
+      font-size: 0.5rem;
       color: rgba(255,255,255,0.85);
-      margin-top: 2px;
+      margin-top: 1px;
     }
 
-    /* Login Screen - Page 1 (no scan badge) */
+    /* Partners Bar in Header - visible on Page 2 */
+    .partners-bar {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      flex-wrap: wrap;
+    }
+
+    .partners-bar.visible {
+      display: flex;
+    }
+
+    .partner-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .partner-item img {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+      border-radius: 6px;
+      background: rgba(255,255,255,0.15);
+      padding: 3px;
+    }
+
+    .partner-item .partner-name {
+      font-size: 0.4rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.9);
+      text-align: center;
+      line-height: 1.1;
+    }
+
+    .partner-placeholder {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: rgba(255,255,255,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.45rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.7);
+    }
+
+    /* Login Screen - Page 1 */
     .login-container {
       flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 24px 20px;
+      padding: 24px 20px 20px;
       background: #ffffff;
     }
 
     .login-card {
       background: #f8fafc;
       border-radius: 28px;
-      padding: 32px 24px;
+      padding: 28px 24px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.05);
       border: 1px solid #eef2f8;
     }
 
     .input-group {
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
 
     .input-label {
@@ -171,7 +224,7 @@
       font-weight: 700;
       font-size: 1rem;
       cursor: pointer;
-      margin-top: 10px;
+      margin-top: 6px;
       transition: 0.15s;
     }
 
@@ -183,10 +236,10 @@
       color: #dc2626;
       font-size: 0.7rem;
       text-align: center;
-      margin-top: 14px;
+      margin-top: 12px;
     }
 
-    /* Main content - Page 2 (hidden until login) */
+    /* Main content - Page 2 */
     .main-content {
       flex: 1;
       display: flex;
@@ -197,29 +250,29 @@
       display: none;
     }
 
-    /* Cards Container - 2 column, 3 row grid */
+    /* Cards Container */
     .cards-container {
       flex: 1;
-      padding: 20px 16px;
+      padding: 16px 14px;
       background: #f0fdf4;
     }
 
     .cards-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
+      gap: 12px;
       height: auto;
     }
 
     .action-card {
-      border-radius: 20px;
-      padding: 18px 12px 14px;
+      border-radius: 18px;
+      padding: 16px 10px 12px;
       cursor: pointer;
       transition: all 0.2s ease;
       border: 1px solid #d1fae5;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
       text-align: center;
-      min-height: 100px;
+      min-height: 90px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -230,7 +283,6 @@
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     }
 
-    /* Card color tabs */
     .action-card.registration {
       background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
       border-top: 6px solid #f59e0b;
@@ -280,19 +332,19 @@
     }
 
     .card-title {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       font-weight: 800;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
       letter-spacing: 0.3px;
     }
 
-    /* Sub-options inside Registration card */
+    /* Sub-options */
     .sub-options {
       display: none;
       flex-direction: column;
-      gap: 8px;
-      margin-top: 12px;
-      padding-top: 12px;
+      gap: 6px;
+      margin-top: 10px;
+      padding-top: 10px;
       border-top: 1px dashed #fcd34d;
     }
 
@@ -303,9 +355,9 @@
     .sub-option {
       background: rgba(255,255,255,0.6);
       border: 1px solid #fcd34d;
-      border-radius: 14px;
-      padding: 10px 8px;
-      font-size: 0.7rem;
+      border-radius: 12px;
+      padding: 8px 6px;
+      font-size: 0.65rem;
       font-weight: 600;
       color: #92400e;
       cursor: pointer;
@@ -317,10 +369,10 @@
       background: #fef3c7;
     }
 
-    /* Logout Button Bar */
+    /* Logout Bar */
     .logout-bar {
       background: #ffffff;
-      padding: 12px 16px;
+      padding: 10px 16px;
       text-align: center;
       border-top: 1px solid #eef2f8;
       border-bottom: 1px solid #eef2f8;
@@ -330,9 +382,9 @@
       background: linear-gradient(135deg, #059669 0%, #10b981 100%);
       border: none;
       color: white;
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       font-weight: 600;
-      padding: 10px 20px;
+      padding: 8px 20px;
       border-radius: 30px;
       cursor: pointer;
       width: 100%;
@@ -348,20 +400,20 @@
     /* footer */
     .app-footer {
       background: linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%);
-      padding: 10px 16px;
+      padding: 8px 16px;
       text-align: center;
     }
 
     .footer-text {
       color: rgba(255,255,255,0.95);
-      font-size: 0.6rem;
+      font-size: 0.55rem;
       font-weight: 500;
       letter-spacing: 0.3px;
       line-height: 1.4;
     }
 
-    /* Modal for card actions */
-    .info-modal {
+    /* Registration Form Modal */
+    .form-modal {
       position: fixed;
       top: 0;
       left: 0;
@@ -371,46 +423,82 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      z-index: 200;
+      z-index: 350;
       visibility: hidden;
       opacity: 0;
       transition: 0.2s;
     }
 
-    .info-modal.active {
+    .form-modal.active {
       visibility: visible;
       opacity: 1;
     }
 
-    .info-modal-card {
+    .form-modal-card {
       background: white;
-      width: 280px;
+      width: 320px;
+      max-height: 85vh;
       border-radius: 32px;
-      padding: 28px 20px;
+      padding: 24px 20px;
+      overflow-y: auto;
+    }
+
+    .form-modal-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #065f46;
+      margin-bottom: 16px;
       text-align: center;
     }
 
-    .info-modal-card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 12px;
-      color: #065f46;
-      font-weight: 700;
+    .form-group {
+      margin-bottom: 14px;
     }
 
-    .info-modal-card p {
-      font-size: 0.8rem;
-      color: #047857;
-      margin-bottom: 20px;
+    .form-label {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #334155;
+      margin-bottom: 4px;
     }
 
-    .info-close-btn {
+    .form-input, .form-select {
+      width: 100%;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 28px;
+      padding: 12px 16px;
+      font-size: 0.85rem;
+      font-family: inherit;
+      transition: 0.2s;
+    }
+
+    .form-input:focus, .form-select:focus {
+      outline: none;
+      border-color: #10b981;
+      box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+    }
+
+    .form-input[readonly] {
+      background: #f1f5f9;
+      color: #475569;
+    }
+
+    .form-close-btn {
+      width: 100%;
       background: linear-gradient(135deg, #059669 0%, #10b981 100%);
       border: none;
-      padding: 10px 20px;
+      padding: 12px;
       border-radius: 28px;
       color: white;
       font-weight: 600;
       cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .form-close-btn:active {
+      transform: scale(0.97);
     }
 
     /* Sub-option modal */
@@ -424,7 +512,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      z-index: 350;
+      z-index: 300;
       visibility: hidden;
       opacity: 0;
       transition: 0.2s;
@@ -481,36 +569,52 @@
           <p>task management</p>
         </div>
       </div>
+
+      <!-- Partners Bar - visible on Page 2 -->
+      <div id="partnersBar" class="partners-bar">
+        <div class="partner-item">
+          <img src="Global Fund.png" alt="Global Fund" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=partner-placeholder>GF</div>';">
+          <span class="partner-name">Global Fund</span>
+        </div>
+        <div class="partner-item">
+          <img src="WHO.png" alt="WHO" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=partner-placeholder>WHO</div>';">
+          <span class="partner-name">WHO</span>
+        </div>
+        <div class="partner-item">
+          <img src="NMCP.png" alt="NMCP" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=partner-placeholder>NMCP</div>';">
+          <span class="partner-name">NMCP</span>
+        </div>
+        <div class="partner-item">
+          <img src="World Vision.png" alt="World Vision" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=partner-placeholder>WV</div>';">
+          <span class="partner-name">World Vision</span>
+        </div>
+      </div>
     </div>
 
-    <!-- Page 1: Login Section (no scan badge) -->
+    <!-- Page 1: Login Section -->
     <div id="loginSection" class="login-container">
       <div class="login-card">
         <div class="input-group">
           <label class="input-label">username</label>
           <input type="text" id="usernameInput" class="login-input" placeholder="enter username">
         </div>
-        
         <div class="input-group">
           <label class="input-label">password</label>
           <input type="password" id="passwordInput" class="login-input" placeholder="enter password">
         </div>
-        
         <button id="loginBtn" class="login-btn">sign in</button>
         <div id="loginError" class="error-message"></div>
       </div>
     </div>
 
-    <!-- Page 2: Main Content with Cards -->
+    <!-- Page 2: Main Content -->
     <div id="mainContent" class="main-content hidden">
       <div class="cards-container">
-        <div class="cards-grid" id="cardsGrid">
-          <!-- Cards will be injected via JS -->
-        </div>
+        <div class="cards-grid" id="cardsGrid"></div>
       </div>
     </div>
 
-    <!-- Logout Button Bar -->
+    <!-- Logout Bar -->
     <div id="logoutBar" class="logout-bar hidden">
       <button id="logoutActionBtn" class="logout-btn">logout</button>
     </div>
@@ -522,16 +626,54 @@
   </div>
 </div>
 
-<!-- Info Modal for card clicks -->
-<div id="infoModal" class="info-modal">
-  <div class="info-modal-card">
-    <h3 id="modalTitle">Module</h3>
-    <p id="modalDesc">Information about this module</p>
-    <button class="info-close-btn" id="modalCloseBtn">close</button>
+<!-- Registration Form Modal -->
+<div id="formModal" class="form-modal">
+  <div class="form-modal-card">
+    <h3>manual entry</h3>
+    
+    <div class="form-group">
+      <label class="form-label">date</label>
+      <input type="text" id="entryDate" class="form-input" readonly>
+    </div>
+    
+    <div class="form-group">
+      <label class="form-label">district</label>
+      <select id="districtSelect" class="form-select">
+        <option value="">-- select district --</option>
+        <option value="Western Area">Western Area</option>
+        <option value="Eastern">Eastern</option>
+        <option value="Northern">Northern</option>
+        <option value="Southern">Southern</option>
+        <option value="North Western">North Western</option>
+      </select>
+    </div>
+    
+    <div class="form-group">
+      <label class="form-label">chiefdom</label>
+      <select id="chiefdomSelect" class="form-select">
+        <option value="">-- select chiefdom --</option>
+      </select>
+    </div>
+    
+    <div class="form-group">
+      <label class="form-label">phu</label>
+      <select id="phuSelect" class="form-select">
+        <option value="">-- select PHU --</option>
+      </select>
+    </div>
+    
+    <div class="form-group">
+      <label class="form-label">community</label>
+      <select id="communitySelect" class="form-select">
+        <option value="">-- select community --</option>
+      </select>
+    </div>
+    
+    <button id="formCloseBtn" class="form-close-btn">close</button>
   </div>
 </div>
 
-<!-- Sub-option Modal -->
+<!-- Sub-option modal -->
 <div id="subModal" class="sub-modal">
   <div class="sub-modal-card">
     <h3 id="subModalTitle">Option</h3>
@@ -545,7 +687,94 @@
   let isLoggedIn = false;
   let users = [];
 
-  // Card definitions
+  // ========== CASCADING DATA ==========
+  const locationData = {
+    "Western Area": {
+      chiefdoms: ["Waterloo", "Regent", "York", "Kissi"],
+      phu: {
+        "Waterloo": ["PHU Waterloo 1", "PHU Waterloo 2"],
+        "Regent": ["PHU Regent", "PHU Regent East"],
+        "York": ["PHU York", "PHU York West"],
+        "Kissi": ["PHU Kissi", "PHU Kissi Town"]
+      },
+      communities: {
+        "PHU Waterloo 1": ["Community A", "Community B"],
+        "PHU Waterloo 2": ["Community C", "Community D"],
+        "PHU Regent": ["Regent Town", "Regent Hill"],
+        "PHU Regent East": ["East End", "East Side"],
+        "PHU York": ["York Village", "York Beach"],
+        "PHU York West": ["West End", "West Point"],
+        "PHU Kissi": ["Kissi Town", "Kissi Road"],
+        "PHU Kissi Town": ["Kissi Central", "Kissi East"]
+      }
+    },
+    "Eastern": {
+      chiefdoms: ["Kenema", "Kailahun", "Kono"],
+      phu: {
+        "Kenema": ["PHU Kenema", "PHU Kenema Town"],
+        "Kailahun": ["PHU Kailahun", "PHU Kailahun Central"],
+        "Kono": ["PHU Kono", "PHU Kono North"]
+      },
+      communities: {
+        "PHU Kenema": ["Kenema Town", "Kenema East"],
+        "PHU Kenema Town": ["Town Center", "Town West"],
+        "PHU Kailahun": ["Kailahun City", "Kailahun Rural"],
+        "PHU Kailahun Central": ["Central Area", "Central East"],
+        "PHU Kono": ["Kono City", "Kono West"],
+        "PHU Kono North": ["North Area", "North Side"]
+      }
+    },
+    "Northern": {
+      chiefdoms: ["Makeni", "Kabala", "Bombali"],
+      phu: {
+        "Makeni": ["PHU Makeni", "PHU Makeni Central"],
+        "Kabala": ["PHU Kabala", "PHU Kabala Town"],
+        "Bombali": ["PHU Bombali", "PHU Bombali East"]
+      },
+      communities: {
+        "PHU Makeni": ["Makeni City", "Makeni Rural"],
+        "PHU Makeni Central": ["Central Makeni", "Central West"],
+        "PHU Kabala": ["Kabala Town", "Kabala Hills"],
+        "PHU Kabala Town": ["Town Area", "Town East"],
+        "PHU Bombali": ["Bombali City", "Bombali West"],
+        "PHU Bombali East": ["East Bombali", "East Rural"]
+      }
+    },
+    "Southern": {
+      chiefdoms: ["Bo", "Pujehun", "Bonthe"],
+      phu: {
+        "Bo": ["PHU Bo", "PHU Bo Town"],
+        "Pujehun": ["PHU Pujehun", "PHU Pujehun Central"],
+        "Bonthe": ["PHU Bonthe", "PHU Bonthe Island"]
+      },
+      communities: {
+        "PHU Bo": ["Bo City", "Bo Rural"],
+        "PHU Bo Town": ["Town Center", "Town South"],
+        "PHU Pujehun": ["Pujehun City", "Pujehun West"],
+        "PHU Pujehun Central": ["Central Area", "Central North"],
+        "PHU Bonthe": ["Bonthe City", "Bonthe East"],
+        "PHU Bonthe Island": ["Island North", "Island South"]
+      }
+    },
+    "North Western": {
+      chiefdoms: ["Port Loko", "Kambia", "Lungi"],
+      phu: {
+        "Port Loko": ["PHU Port Loko", "PHU Port Loko Town"],
+        "Kambia": ["PHU Kambia", "PHU Kambia Central"],
+        "Lungi": ["PHU Lungi", "PHU Lungi East"]
+      },
+      communities: {
+        "PHU Port Loko": ["Port Loko City", "Port Loko Rural"],
+        "PHU Port Loko Town": ["Town Area", "Town West"],
+        "PHU Kambia": ["Kambia City", "Kambia North"],
+        "PHU Kambia Central": ["Central Area", "Central South"],
+        "PHU Lungi": ["Lungi Town", "Lungi Beach"],
+        "PHU Lungi East": ["East Lungi", "East Rural"]
+      }
+    }
+  };
+
+  // Cards
   const cards = [
     { id: 1, title: "Registration", cardClass: "registration", hasSubs: true },
     { id: 2, title: "Distribution", cardClass: "distribution", hasSubs: false },
@@ -571,10 +800,16 @@
   const usernameInput = document.getElementById('usernameInput');
   const passwordInput = document.getElementById('passwordInput');
   const loginError = document.getElementById('loginError');
-  const infoModal = document.getElementById('infoModal');
-  const modalTitle = document.getElementById('modalTitle');
-  const modalDesc = document.getElementById('modalDesc');
-  const modalCloseBtn = document.getElementById('modalCloseBtn');
+  const partnersBar = document.getElementById('partnersBar');
+
+  const formModal = document.getElementById('formModal');
+  const entryDate = document.getElementById('entryDate');
+  const districtSelect = document.getElementById('districtSelect');
+  const chiefdomSelect = document.getElementById('chiefdomSelect');
+  const phuSelect = document.getElementById('phuSelect');
+  const communitySelect = document.getElementById('communitySelect');
+  const formCloseBtn = document.getElementById('formCloseBtn');
+
   const subModal = document.getElementById('subModal');
   const subModalTitle = document.getElementById('subModalTitle');
   const subModalDesc = document.getElementById('subModalDesc');
@@ -616,7 +851,91 @@
     return users.some(user => user.username === username && user.password === password);
   }
 
-  // Render cards with sub-options for Registration
+  // ========== CASCADING FUNCTIONS ==========
+  function setAutoDate() {
+    const now = new Date();
+    const dateStr = now.toLocaleDateString('en-GB', {
+      day: '2-digit',
+      month: 'short',
+      year: 'numeric'
+    });
+    entryDate.value = dateStr;
+  }
+
+  function updateChiefdoms() {
+    const district = districtSelect.value;
+    chiefdomSelect.innerHTML = '<option value="">-- select chiefdom --</option>';
+    phuSelect.innerHTML = '<option value="">-- select PHU --</option>';
+    communitySelect.innerHTML = '<option value="">-- select community --</option>';
+    
+    if (district && locationData[district]) {
+      const chiefdoms = locationData[district].chiefdoms;
+      chiefdoms.forEach(cd => {
+        const option = document.createElement('option');
+        option.value = cd;
+        option.textContent = cd;
+        chiefdomSelect.appendChild(option);
+      });
+    }
+  }
+
+  function updatePHUs() {
+    const district = districtSelect.value;
+    const chiefdom = chiefdomSelect.value;
+    phuSelect.innerHTML = '<option value="">-- select PHU --</option>';
+    communitySelect.innerHTML = '<option value="">-- select community --</option>';
+    
+    if (district && chiefdom && locationData[district]) {
+      const phus = locationData[district].phu[chiefdom] || [];
+      phus.forEach(phu => {
+        const option = document.createElement('option');
+        option.value = phu;
+        option.textContent = phu;
+        phuSelect.appendChild(option);
+      });
+    }
+  }
+
+  function updateCommunities() {
+    const district = districtSelect.value;
+    const phu = phuSelect.value;
+    communitySelect.innerHTML = '<option value="">-- select community --</option>';
+    
+    if (district && phu && locationData[district]) {
+      const communities = locationData[district].communities[phu] || [];
+      communities.forEach(comm => {
+        const option = document.createElement('option');
+        option.value = comm;
+        option.textContent = comm;
+        communitySelect.appendChild(option);
+      });
+    }
+  }
+
+  function openFormModal() {
+    setAutoDate();
+    districtSelect.value = '';
+    chiefdomSelect.innerHTML = '<option value="">-- select chiefdom --</option>';
+    phuSelect.innerHTML = '<option value="">-- select PHU --</option>';
+    communitySelect.innerHTML = '<option value="">-- select community --</option>';
+    formModal.classList.add('active');
+  }
+
+  function closeFormModal() {
+    formModal.classList.remove('active');
+  }
+
+  function openSubModal(title, desc) {
+    subModalTitle.innerText = title;
+    subModalDesc.innerText = desc;
+    subModal.classList.add('active');
+  }
+
+  function closeSubModal() {
+    subModal.classList.remove('active');
+  }
+
+  // ========== RENDER CARDS ==========
   function renderCards() {
     if (!cardsGrid) return;
     cardsGrid.innerHTML = cards.map(card => {
@@ -625,7 +944,7 @@
         subsHTML = `
           <div class="sub-options" id="subs-${card.id}">
             ${subOptions.map(sub => `
-              <div class="sub-option" data-sub-title="${sub.title}" data-sub-desc="${sub.desc}">${sub.title}</div>
+              <div class="sub-option" data-sub-id="${sub.id}" data-sub-title="${sub.title}" data-sub-desc="${sub.desc}">${sub.title}</div>
             `).join('')}
           </div>
         `;
@@ -638,7 +957,6 @@
       `;
     }).join('');
 
-    // Card click handler
     document.querySelectorAll('.action-card').forEach(cardEl => {
       const cardId = parseInt(cardEl.dataset.cardId);
       const hasSubs = cardEl.dataset.hasSubs === 'true';
@@ -651,29 +969,27 @@
           if (subs) {
             subs.classList.toggle('open');
           }
-        } else {
-          const title = cardEl.dataset.cardTitle;
-          modalTitle.innerText = title;
-          modalDesc.innerText = `${title} module - tap to access detailed features.`;
-          infoModal.classList.add('active');
         }
       });
     });
 
-    // Sub-option click handler
     document.querySelectorAll('.sub-option').forEach(subEl => {
       subEl.addEventListener('click', (e) => {
         e.stopPropagation();
+        const subId = parseInt(subEl.dataset.subId);
         const title = subEl.dataset.subTitle;
         const desc = subEl.dataset.subDesc;
-        subModalTitle.innerText = title;
-        subModalDesc.innerText = desc;
-        subModal.classList.add('active');
+        
+        if (subId === 1) {
+          openFormModal();
+        } else {
+          openSubModal(title, desc);
+        }
       });
     });
   }
 
-  // Login logic
+  // ========== LOGIN FUNCTIONS ==========
   async function handleLogin() {
     const username = usernameInput.value.trim();
     const password = passwordInput.value;
@@ -712,6 +1028,7 @@
     loginSection.classList.remove('hidden');
     mainContent.classList.add('hidden');
     logoutBar.classList.add('hidden');
+    partnersBar.classList.remove('visible');
     loginError.textContent = '';
     usernameInput.value = '';
     passwordInput.value = '';
@@ -721,6 +1038,7 @@
     loginSection.classList.add('hidden');
     mainContent.classList.remove('hidden');
     logoutBar.classList.remove('hidden');
+    partnersBar.classList.add('visible');
     renderCards();
   }
 
@@ -731,24 +1049,22 @@
     showPage1();
   }
 
-  function closeModal() {
-    infoModal.classList.remove('active');
-  }
-
-  function closeSubModal() {
-    subModal.classList.remove('active');
-  }
-
-  // Event binding
+  // ========== EVENT BINDING ==========
   function bindEvents() {
     loginBtn.addEventListener('click', handleLogin);
     logoutActionBtn.addEventListener('click', handleLogout);
     usernameInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleLogin(); });
     passwordInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleLogin(); });
-    modalCloseBtn.addEventListener('click', closeModal);
-    infoModal.addEventListener('click', (e) => { if (e.target === infoModal) closeModal(); });
+    
+    formCloseBtn.addEventListener('click', closeFormModal);
+    formModal.addEventListener('click', (e) => { if (e.target === formModal) closeFormModal(); });
+    
     subCloseBtn.addEventListener('click', closeSubModal);
     subModal.addEventListener('click', (e) => { if (e.target === subModal) closeSubModal(); });
+    
+    districtSelect.addEventListener('change', updateChiefdoms);
+    chiefdomSelect.addEventListener('change', updatePHUs);
+    phuSelect.addEventListener('change', updateCommunities);
   }
 
   // Initialize
